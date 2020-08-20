@@ -19,10 +19,15 @@ npm run test
 
 
 ### Redis setup:
+
 REDIS_HOST="//localhost"
+
 REDIS_PORT=6379
+
 REDIS_SESSION_TIMEOUT=604800  // 7 days
+
 REDIS_RETRY:5000
+
 REDIS_KEY_PREFIX="dev."
 
 
