@@ -19,10 +19,15 @@ npm run test
 
 
 ### redis setup:
+
 REDIS_HOST="//localhost"
+
 REDIS_PORT=6379
+
 REDIS_SESSION_TIMEOUT=604800  // 7 days
+
 REDIS_RETRY:5000
+
 REDIS_KEY_PREFIX="dev."
 
 
@@ -30,6 +35,7 @@ REDIS_KEY_PREFIX="dev."
 http://localhost:8000/api/v1/tv/97186/episodes
 
 ### Output sample:
+```
 {
     "status": true,
     "data": [
@@ -411,3 +417,4 @@ http://localhost:8000/api/v1/tv/97186/episodes
         }
     ]
 }
+```
