@@ -32,7 +32,7 @@ REDIS_KEY_PREFIX="dev."
 
 
 ### API Endpoint:
-http://localhost:8000/api/v1/tv/97186/episodes
+http://localhost:8000/topEpisodes/97186
 
 ### Output sample:
 ```

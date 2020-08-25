@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { TMDBController } from '../controllers/tmdb';
-const API_VERSION = '/api/v1';
 
 export class Routes {
   public tmdbController: TMDBController = new TMDBController()
@@ -25,7 +24,7 @@ export class Routes {
     })
 
     // tmdb endpoints
-    app.get(API_VERSION + '/tv/:tvId/episodes', this.tmdbController.create)
+    app.get('/topEpisodes/:seriesId', this.tmdbController.create)
 
     // Catch all other routes and return the index file
     app.get('*', (req: Request, res: Response) => {

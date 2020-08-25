@@ -17,12 +17,14 @@ const isSorte = (episodes) => {
 
 describe('#fetchSeries()', function () {
   it('check status, episodes length and sorting order', function (done) {
-    chai.request(app).get('/api/v1/tv/97186/episodes')
+    chai.request(app).get('/topEpisodes/97186')
       .end((err: any, res: any) => {
         expect(res.body.status).to.be.true;
         expect(res.body.data.length).to.be.at.most(20);;
         const isSorted = isSorte(res.body.data)
         expect(isSorted).to.be.true;
+        expect(res.body.data).to.be.an('array');
+        res.body.data.every(i => expect(i).to.have.all.keys('id', 'name', 'vote_average', 'vote_count'))
         done();
       });
   })
