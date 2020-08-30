@@ -1,12 +1,7 @@
 import { Request, Response } from 'express';
 import { getTvDetails, getEpisodes } from '../services/tmbdapi';
 import { cacheAction } from '../utils/cacheActions';
-export interface ResponseModel {
-    id: string
-    name: string
-    vote_average: string
-    vote_count: string
-  }
+import { ResponseModel} from '../models/tmdb';
 const processEachSeason = (tvId, seasonNumber) => {
     return new Promise(async (resolve, reject) => {
         try {
